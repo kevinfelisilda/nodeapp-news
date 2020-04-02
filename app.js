@@ -1,12 +1,13 @@
+require('dotenv').config();
 const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
+const compression = require('compression');
 const logger = require('morgan');
 
 const indexRouter = require('./routes/index');
 const graphql = require('./routes/graphql');
-require('dotenv').config();
 
 const app = express();
 
@@ -18,6 +19,10 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+
+// gzip
+app.use(compression())
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 graphql(app);
