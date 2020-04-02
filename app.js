@@ -6,6 +6,7 @@ const logger = require('morgan');
 
 const indexRouter = require('./routes/index');
 const graphql = require('./routes/graphql');
+require('dotenv').config();
 
 const app = express();
 
