@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "dev": "DEBUG=* nodemon ./bin/www"
+    "dev": "DEBUG=* nodemon ./bin/www",
+    "test": "./node_modules/.bin/mocha --exit --require tests/helpers \"tests/{,!(integration)/**/}*@(.spec.js)\" --timeout 15000"
   },
   "dependencies": {
     "bluebird": "^3.7.2",
@@ -21,6 +22,10 @@
     "rss-parser": "^3.7.6"
   },
   "devDependencies": {
-    "nodemon": "^2.0.2"
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "mocha": "^7.1.1",
+    "nodemon": "^2.0.2",
+    "sinon": "^9.0.1"
   }
 }

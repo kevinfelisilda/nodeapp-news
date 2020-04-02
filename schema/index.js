@@ -12,7 +12,6 @@ function generateSchema() {
     }
 
     type Query {
-      hello: String
       news: [News]
     }
   `);

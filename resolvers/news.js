@@ -1,17 +1,15 @@
-const Parser = require('rss-parser');
 const cache = require('../helpers/cache');
+const rss = require('../helpers/rss');
 
 const URL = 'https://www.who.int/feeds/entity/csr/don/en/rss.xml';
 
-const parser = new Parser();
-
 const news = async () => {
   const data = await cache.get('news');
-  if (data) {
+  if (Array.isArray(data) && data.length) {
     return data;
   }
 
-  const { items } = await parser.parseURL(URL);
+  const { items } = await rss.parseURL(URL);
   const result = items.map(item => ({
     id: item.guid,
     title: item.title,

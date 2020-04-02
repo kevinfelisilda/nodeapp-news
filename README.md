@@ -59,3 +59,11 @@ query getNews {
   }
 }
 ```
+
+## Tests
+
+Test can be found in `tests/resolvers`. Run test by using the following command:
+
+```
+yarn test
+```
