@@ -15,7 +15,7 @@
 1. Copy default settings
 
 ```
-cp .env.sample .env
+cp .env.example .env
 ```
 
 2. Run docker containers
