@@ -1,5 +1,7 @@
 # Node News App
 
+A simple Node JS app with GraphQL and React JS
+
 ![alt text](docs/sample.png "Screenshot")
 
 
