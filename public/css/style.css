@@ -1,0 +1,19 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.news-item {
+  padding-bottom: 1rem;
+  border-bottom: solid 1px #eee;
+  margin-bottom: 1rem;
+}
+
+.news-item h4 {
+  margin: 5px 0 0 0;
+  display: block;
+}
