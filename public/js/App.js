@@ -38,22 +38,30 @@ class App extends React.Component {
         news,
         loading: false,
       });
+    }).catch(error => {
+      this.setState({
+        loading: false,
+        error: true,
+      })
     });
   }
 
   render() {
-    const { news } = this.state;
+    const { news, loading, error } = this.state;
     return (
       <div>
         <h2>News:</h2>
         <div>
-          {news.map((item) => (
+          {loading && <p>Please wait...</p>}
+          {!error ? news.map((item) => (
             <div key={item.id} className="news-item">
               <small>{item.date.substring(0, item.date.length - 13)}</small>
               <a href={item.link}><h5>{item.title}</h5></a>
               <p>{item.snippet}</p>
             </div>
-          ))}
+          )) : (
+            <p className="error">Unable to fetch news data</p>
+          )}
         </div>
       </div>
     );
